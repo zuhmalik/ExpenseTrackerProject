@@ -1,64 +1,49 @@
 Expense Tracker Project
+The "Expense Tracker Project" is a Java application that assists users in managing their expenses, tracking spending habits, and gaining insights into their financial activities. This project provides a command-line interface for adding, generating reports, and deleting expenses while storing the data in a MySQL database.
 
-Overview
-The "Expense Tracker Project" is a Java application designed to help users manage their expenses, track spending patterns, and gain insights into their financial habits. This project provides a user-friendly interface for entering expenses, categorizing them, and generating reports for better financial planning.
+Prerequisites
+Before running the application, ensure you have:
+
+Java Development Kit (JDK) installed.
+MySQL database server set up with a database named expense_tracker.
+MySQL Connector/J added to your project classpath.
+How to Run
+Clone this repository to your local machine.
+Open the project in your preferred Java IDE (such as Eclipse or IntelliJ).
+Build the project.
+Run the ExpenseTracker class.
 
 Features
-Expense Entry: Users can input expenses, including the amount, date, and category.
+1. Add Expense
+The application allows users to add expenses by specifying the date, amount, category, and description. Expenses are then stored in the database for future reference.
 
-Expense Categorization: Expenses can be categorized by type, such as food, transportation, entertainment, etc.
+2. Generate Report
+Users can generate an expense report displaying all stored expenses. The report includes expense details such as ID, date, amount, category, and description. The total amount of expenses is also displayed at the end.
 
-Monthly Summaries: Generate monthly summaries of expenses to visualize spending patterns.
-
-Budget Monitoring: Set budget limits for different expense categories and receive notifications when exceeded.
-
-Data Visualization: The application offers visual graphs and charts to help users analyze their spending habits.
-
-Data Persistence: Expense data is stored persistently using file-based storage.
+3. Delete Expense
+Users can delete specific expenses by providing the corresponding expense ID. If the provided ID matches an existing expense, it will be deleted from the database.
 
 Project Structure
-The project is structured into logical components:
+The project consists of the following components:
 
-ExpenseTrackerApp: Contains the main application logic and user interface.
-
-Expense: Defines the Expense class and associated methods.
-
-Category: Implements the Category class for managing expense categories.
-
-DataStorage: Manages data storage and retrieval using file-based serialization.
-
-Technical Details
-
-Language: Java
-
-Development Environment: Netbeans IDE
-
-Application Entry Point: ExpenseTrackerApp.java serves as the entry point of the application.
-
-User Interface: The application employs Java Swing components for a user-friendly graphical interface.
-
-Expense Class: Represents individual expenses, including attributes like amount, date, and category.
-C
-ategory Class: Defines expense categories and associated methods.
-
-Data Storage: Serialized files are used to store and retrieve expense and category data.
-
-Data Validation: Input validation ensures that accurate and consistent data is entered.
-
-Reports and Visualizations: The application generates reports and visualizations using built-in Java libraries.
-
-Getting Started
-Clone the repository to your local machine.
-Open the project in your preferred Java IDE.
-Build and run the ExpenseTrackerApp.java file.
+ExpenseTracker: The main class that orchestrates the application's functionality.
+DB_USERNAME, DB_PASSWORD, DB_URL: Constants for database connection configuration.
+createTable(Connection connection): Method to create the expenses table if it does not exist.
+displayMenu(Connection connection): Method to display the main menu and handle user interactions.
+addExpense(Connection connection, Scanner scanner): Method to add a new expense to the database.
+generateReport(Connection connection): Method to generate and display the expense report.
+deleteExpense(Connection connection, Scanner scanner): Method to delete an expense from the database.
 
 Future Enhancements
-Implement user authentication for secure access to personal financial data.
-Add export options to save reports as PDF or other formats.
-Enhance the data visualization capabilities with more advanced charts.
+Enhance the user interface with a more user-friendly text-based menu.
+Implement data validation for user inputs to prevent errors.
+Introduce user authentication for secure access to expense data.
 
 Contributing
-Contributions to this project are welcomed. Feel free to fork the repository, make improvements, and submit pull requests.
+Contributions to this project are welcome. If you have ideas for improvements or new features, feel free to fork the repository, make changes, and submit pull requests.
+
+License
+This project is licensed under the MIT License.
 
 
 
